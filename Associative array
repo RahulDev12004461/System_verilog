@@ -1,0 +1,10 @@
+module tc;
+  int a[*];
+  int arr[int];
+  initial begin
+    arr[2]=32;
+    arr[3]=30;
+    arr[100]=77;
+    $display("the size of associative array is=%p",$size(arr));
+  end
+endmodule
