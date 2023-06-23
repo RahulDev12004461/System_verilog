@@ -1,0 +1,23 @@
+class abc;
+   protected int a,b;
+endclass
+class child extends abc;
+  function new();
+  super.a=100;
+    $display("the value of a and b is %d",super.a,super.b);
+  endfunction
+endclass
+module tb;
+  abc x1;
+  child c1;
+  initial begin
+    x1=new();
+    c1=new();
+  
+    /*$display("the default value of a and b is %d",c1.a,c1.b);
+    c1.a=10;
+    c1.b=15;
+    $display("the default value of a and b is %d",c1.a,c1.b);**/
+  end 
+endmodule
+
