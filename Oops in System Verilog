@@ -1,0 +1,27 @@
+//oops concept
+class eth_pkt;
+  bit [7:0]sof;
+  bit  [15:0]len;
+  int count;
+  function new();
+    $display(sof,len,count);
+  endfunction
+endclass
+class eth_good_pkt extends eth_pkt;
+  int count_good;
+  function  print();
+    $display("the default values are %d",sof,len,count);
+       super.sof;
+    super.len;
+    super.count;
+    $display("the values of count_good is %d",count_good);
+  endfunction
+endclass
+module tc;
+  eth_packet p1;
+  eth_good_pkt p2;
+  initial begin
+  p2=new();
+  $display(p2.print());
+  end
+endmodule
