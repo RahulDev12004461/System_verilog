@@ -1,0 +1,38 @@
+polymorphism
+class parent;
+ virtual function void display();
+    $display("In parent class");
+  endfunction
+endclass
+class child1 extends parent;
+  function void displaY();
+    $display("Im in child1 class");
+  endfunction
+endclass
+class child2 extends parent;
+  function void displaY();
+    $display("Im in child2 class");
+  endfunction
+endclass
+class child3 extends parent;
+  function void displaY();
+    $display("Im in child3 class");
+  endfunction
+endclass
+
+module tc;
+    child1 c1;
+  child2 c2;
+  child3 c3;
+  c1=new();
+  c2=new();
+  c3=new()
+  parent p1,p2,p3;
+  p1=c1;
+  p2=c2;
+  p3=c3;
+  p1.display();
+  p2.display();
+  p3.display();
+  end
+endmodule
