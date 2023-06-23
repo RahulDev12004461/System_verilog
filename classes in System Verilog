@@ -1,0 +1,26 @@
+class rectangle;
+  int base;
+  int height;
+  function int area();
+    area=base*height;
+  endfunction
+  function int perimeter();
+    perimeter=2*(base+height);
+  endfunction
+endclass
+module tb;
+  rectangle r;
+  int x,y;
+  initial begin
+    r=new;
+    r.base=30;
+    r.height=2;
+    $display("thevalue of base and height is  %d",r.base,r.height);
+    x=r.area();
+    
+    $display("the area of given rectangle is %d",x);
+    y=r.perimeter();
+    
+    $display("the perimeter of given rectangle is %d",y);
+  end 
+endmodule 
