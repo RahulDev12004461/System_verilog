@@ -1,0 +1,20 @@
+class myclass;
+  int a,b;
+  function new(int a=5, int b=6);
+    this.a=a;
+    this.b=b;
+  endfunction
+endclass
+module tb;
+  myclass m1, m2, m3,m4;
+  initial begin
+    m1=new();
+    $display("the a=%d b=%d ", m1.a,m1.b);
+    m2=new(10);
+    $display("the a=%d b=%d ", m2.a,m2.b);
+    m3=new(,12);
+    $display("the a=%d b=%d ", m3.a,m3.b);
+    m4=new(10,12);
+    $display("the a=%d b=%d ", m4.a,m4.b);
+  end 
+endmodule
