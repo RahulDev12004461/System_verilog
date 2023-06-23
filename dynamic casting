@@ -1,0 +1,45 @@
+module tc;
+  /*int a=-10;
+  real b;
+  initial begin
+   /*int a=3.124;
+    b=6.85;
+    c=real'(b);
+    $display("the typecasted value of c %f",c);
+    
+    
+    $display(a>>>1);
+    $display(unsigned'(a)>>>1);
+    a=const'(a);
+    a=3;//it will give runtime error because we declare as constant previousaly
+    b=const'(a);
+    b=3;
+    $display("%d",b);
+    dynamic casting*/
+  
+    
+  end
+endmodule
+
+//dynamic typecasting
+// Code your testbench here
+// or browse Examples
+/*module oper2;
+  int i=7;
+  int range=0;
+  bit [4:0]a=5'b10101;
+  initial begin
+    /*if(a->b)
+      $display("a implies b");
+    if(a<->b)
+      $display("a is logically equivalent to b");
+    */
+    if(i inside{[1:5],[10:15],17,18})
+      range +=1;
+    if(a==?5'bx01x1)
+      range +=1;
+    $display("the range is %d",range);
+    
+  end 
+endmodule
+
