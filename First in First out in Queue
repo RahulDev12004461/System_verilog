@@ -1,0 +1,27 @@
+module tb;
+  int q1[$];
+  int q2[$];
+  int i=($random)%50;
+  initial begin
+    q1='{2,3,4,5,6,7};
+    $display("the value of the queue is %p",q1);
+    q1.push_back(12);
+    $display("the value of the queue is %p",q1);
+    q1.delete(0);
+    $display("the value of the queue after deletion %p",q1);
+    q1.insert(2,24);
+    $display("the value of the queue after insertion  is %p",q1);
+  end
+  initial begin
+    forever
+      begin
+        #10 q2.push_back(i);
+        #5 q2.pop_front();
+       $stop;
+      end
+     
+    
+              
+         end 
+   
+         endmodule
