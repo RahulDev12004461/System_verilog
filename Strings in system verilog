@@ -1,0 +1,16 @@
+module rd;
+  struct{
+    int a;
+    bit [7:0]b;
+    string  c;
+  }stup;
+  initial begin
+    
+    stup='{500,128,"rahul"};
+    $display("the initialised value is a=%d,b=%d,c=%s", stup.a,stup.b,stup.c);
+    stup.a=333;
+    stup.b=44;
+    stup.c="ujj";
+    $display("the after updation of the value is a=%d,b=%d,c=%s", stup.a,stup.b,stup.c);
+  end 
+endmodule
