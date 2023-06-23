@@ -1,0 +1,16 @@
+module tc;
+  int a=-10;
+  real b;
+  initial begin
+   /*int a=3.124;
+    b=6.85;
+    c=real'(b);
+    $display("the typecasted value of c %f",c);
+    //dynamic casting
+    */
+    $display(a>>>1);
+    $display(unsigned'(a)>>>1);
+    const '(a);
+    a=3;//it will give runtime error because we declare as constant previousaly
+  end
+endmodule
