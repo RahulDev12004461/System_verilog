@@ -1,0 +1,22 @@
+task add1(int a,int b,int c);
+  a=a+1;
+  b=33+a;
+  c=a+b+c;
+endtask
+task automatic add2(ref int a,ref int b, ref int c);
+  a=a+33+23;
+  b=b+22;
+  c+=5;
+endtask
+
+module tc;
+  int a=5;
+  int b=2;
+  int c=9;
+  initial begin
+  add1(a,b,c);
+  $display("the vlaue of a,b,c is =%d",a,b,c);
+  add2(a,b,c);
+  $display("the vlaue of a,b,c after reference variable is =%d",a,b,c);
+  end
+endmodule
