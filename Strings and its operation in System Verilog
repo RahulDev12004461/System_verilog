@@ -1,0 +1,41 @@
+module tc;
+  string s1,s2,s3,s4,s5;
+  int i,j,k,l,m;
+  initial begin
+    /* s1="rahul dev rai";
+    s2=" is king of ";
+    s3=" the world ";
+    s4={s1,s2,s3};
+    s1="lpu";
+    s2="LPU";
+    if(s1==s2)
+       $display("string is same ");
+    else if(s1>s2)
+      $display("s1>s2 ");
+    else if(s2<s1)
+      $display("s1<s2");*/
+    s1="hi my name is Rahul dev";
+    i=s1.len();
+    s2="rahul";
+    $display("the length of the string is =%d ",i);
+    //after applying putc
+    s2.putc(0,"p");
+    $display("I replacing character R with P =%s ",s2);
+    $display("returning the ASCII value of the given character is =%d ",s2.getc(1));
+    
+    $display("converted in uppercase of string 1 is =%s ",s1.toupper());
+    $display("converted in lowercase of string 1 is %s",s1.tolower());
+    j=s2.compare(s1);
+    $display("after comparing strings %d",j);
+    k=s2.icompare(s1);
+    $display("after i comparing strings %d",k);
+    s4="1242233rahul";
+    l=s4.atoi();
+//atoi string value into ascii value
+    $display("the string between index i to 2 %s",s1.substr(2,6));
+    $display("convert the string value into integer %d ",l);
+    m=9999;
+    s4.itoa(m);
+    $display("convert the string into integer value %s",s4);
+ end 
+endmodule
