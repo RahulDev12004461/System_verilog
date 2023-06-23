@@ -1,0 +1,17 @@
+module tb;
+ typedef  union{
+     int a;
+     bit [15:0]b;
+     bit [7:0]c;
+   }myuni;
+   initial begin
+     myuni u1;
+     int a,b,c;
+     
+     u1.a=5;
+     u1.b=3;
+     u1.c=2;
+     $display("the size of the given union is %d ",$size(myuni));
+     $display("the value of a is=%d, b=%d,c=%d ",u1.a,u1.b,u1.c);
+   end
+ endmodule
