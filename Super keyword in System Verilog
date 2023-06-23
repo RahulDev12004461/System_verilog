@@ -1,0 +1,34 @@
+class rectangle;
+  int length, width;
+  
+  function new(int x, y);
+    this.length = x;
+    this.width = y;
+  endfunction
+  
+  function int area();
+    return length * width;
+  endfunction
+  
+  function int perimeter();
+    return 2 * (length + width);
+  endfunction
+endclass
+
+class square extends rectangle;
+  int size;
+  
+  function new(int size);
+    super.new(size, size);
+    this.size = size;
+  endfunction
+endclass
+
+module tc;
+  square sq = new(10);
+  
+  initial begin
+    $display("The area of the square is %d", sq.area());
+    $display("The perimeter of the square is %d", sq.perimeter());
+  end
+endmodule
