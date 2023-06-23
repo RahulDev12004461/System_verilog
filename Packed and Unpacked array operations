@@ -1,0 +1,19 @@
+module tb;
+  logic [3:0]a[1:14];
+  logic  [3:0][2:0]b[1:63][1:7];
+  initial begin
+  $display("%p",$left(a));
+    $display("%p",$right(a));
+    $display("%p",$left(b));
+    $display("%p",$right(b));
+    $display("%p",$low(a));
+    $display("%p",$high(a));
+    $display("%p",$low(b));
+    $display("%p",$high(b));
+             $display("%p",$size(a));
+             $display("%p",$size(b));
+
+
+
+  end 
+endmodule
