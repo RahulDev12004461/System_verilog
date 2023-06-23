@@ -1,0 +1,14 @@
+class abc;
+  static int a;
+  function static void display();
+    $display("hi lpu");
+  endfunction
+endclass
+ module tb;
+   initial begin
+     $display("the default value of a and b is =%d",abc::a);
+     abc::a=100;
+      $display("the default value of a and b is =%d",abc::a);
+     
+   end 
+ endmodules
