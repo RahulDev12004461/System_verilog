@@ -1,0 +1,11 @@
+module tb;
+  int arr[6];
+
+  initial begin
+    arr = '{1, 3, 54, 5, 7, 9};
+    
+    
+    $display("Display the required values: find=%p, find_f=%p, find_l=%p, find_li=%p",arr.find with (item > 3),arr.find_first with (item > 7),arr.find_last with (item != 0),arr.find_last_index with (item < 3));
+  end
+
+endmodule
