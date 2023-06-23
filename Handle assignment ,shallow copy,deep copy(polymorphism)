@@ -1,0 +1,54 @@
+//deep copy
+
+class ab;
+  int a_pkt;
+  function ab copy();
+    copy=new();
+    copy.a_pkt=this.a_pkt;
+   return copy;
+  endfunction
+   endclass
+
+class bc;
+  int b_pkt;
+  ab  ab_good;
+  function new();
+    ab_good=new();
+  endfunction
+  function bc copy();
+    copy=new();
+    copy.b_pkt=this.b_pkt;
+    copy.ab_good=ab_good.copy;
+    return copy;
+  endfunction
+endclass 
+
+class cd;
+  int c;
+  int d;
+  bc bc_good;
+  function new();
+    bc_good=new();
+  endfunction
+  function cd copy();
+    copy=new();
+    copy.c=this.c;
+    copy.bc_good=bc_good.copy;
+  endfunction
+endclass 
+module tc;
+  cd c1,c2;
+  
+  initial begin
+    c1=new();
+   c2=c1.copy();
+ c1.c=10;
+ c1.d=20;
+ c1.bc_good.b_pkt=20;
+    $display("c2.c=%d,c2.d=%d",c2.c,c2.d);
+   //$display("The gp1 pkt= %d", p1.gp1.g_pct);
+   //$display("p2.a=%d,p2.b=%d",p2.a,p2.b);
+    $display("The gp1 pkt= %d",  c2.bc_good.b_pkt);
+    $display("The gp1 pkt= %d",  c1.bc_good.b_pkt,c1.c,c1.d);
+  end 
+endmodule
