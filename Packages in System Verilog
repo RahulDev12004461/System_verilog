@@ -1,0 +1,29 @@
+package pack1;
+task hf_add(input bit a,b,output bit sum,carry);
+sum= a^b;
+carry=a&b;
+endtask
+endpackage
+
+package pack2;
+task hf_sub(input bit a,b,output bit br,diff);
+br= a^b;
+diff=~a&b;
+endtask
+endpackage
+
+
+//'include "pack1.sv"
+//'include "pack2.sv"
+import pack1::*;
+import pack2::*;
+module test;
+reg a,b,c,d;
+initial begin
+a=1; b=0;
+pack1 :: hf_add(a,b,c,d);
+$display("Sum: a=%b, b= %b, sum=%b, carry=%b", a,b,c,d);
+pack2 :: hf_sub(a,b,c,d);
+$display("subtractor: a=%b, b= %b, diff=%b, borrow=%b", a,b,c,d);
+end
+endmodule
