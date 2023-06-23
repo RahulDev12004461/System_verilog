@@ -1,0 +1,12 @@
+module tc;
+  int a[int];
+  int index;
+  initial begin
+    a[100]=3;
+    a[38]=33;
+    $display("the size of the array =%0d",a.size());
+    a.first(index);
+    $displaY("the first index is %d",index);
+    
+  end 
+endmodule
