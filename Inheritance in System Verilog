@@ -1,0 +1,21 @@
+class parent;
+ int a;
+endclass
+
+class child extends parent;
+  int a;
+  int b;
+endclass
+
+module tb;
+  parent p;
+  child c;
+  initial begin
+    p=new();
+    c=new();
+    p.a=20;
+    c.b=30;
+    $display("the value of the parent member a=%d",p.a);
+    $display("the member of the child class b=%d",c.b);
+  end
+endmodule
