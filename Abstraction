@@ -1,0 +1,37 @@
+virtual class abstract;
+  virtual task  display();
+  endtask
+  virtual function int increment(int x);
+    return x+1;
+  endfunction 
+endclass
+class abc extends abstract;
+   task display();
+    $display("abc");
+  endtask;
+  function int increment(int x);
+    return x+2;
+  endfunction
+endclass
+class xyz extends abstract;
+   task display();
+    $display("xyz");
+  endtask
+endclass
+ module tb;
+   abstract ab;
+   abc   f;
+   xyz   u;
+   int p1,p2,p3;
+   initial begin
+     f=new();
+     u=new();
+     p1=f.increment(1);
+     p2=u.increment(3);
+     $display("the incremented value is %d",p1,p2);
+     ab=f;
+     ab.display();
+     ab=u;
+     ab.display();
+   end 
+ endmodule
