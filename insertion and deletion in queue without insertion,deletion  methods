@@ -1,0 +1,19 @@
+// Code your testbench here
+// or browse Examples
+//practice of queue deleting and inserting elements in queue without using traditional methods
+module tb;
+  int q[$];
+  int q2[$];
+  int x,y,z;
+  initial begin
+    q='{2,3,4,5,6};
+    
+        // $display("%p",q);
+    q={q[0:3],33,q[$]};
+    $display("after inseertion of element at 4th position is %p",q);
+    
+    q={q[0:1],q[3:$]};
+    $display("the value of the queue after deletion is %p",q); 
+
+         end 
+         endmodule
