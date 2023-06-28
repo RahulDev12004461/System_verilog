@@ -1,0 +1,24 @@
+
+//delete the element in dynamic array without using delete methods
+module tc;
+  int arr[];
+      int k=0;
+  int a[];
+  initial begin
+    arr=new[5];
+    a=new[4];
+    arr='{23,33,2,4,5};
+    $display("the value of array is %p",arr);
+    //after deleting the array element at index 2
+    for(int i=0;i<5;i++)
+      begin
+        if(i==2)
+          continue;
+        a[k]=arr[i];
+        k++;
+      end
+         $display("after deletion is %p",a);
+
+
+             end
+             endmodule
